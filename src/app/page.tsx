@@ -10,7 +10,7 @@ export default function Home() {
         <div className="max-w-3xl mx-auto px-6 py-4 flex justify-between items-center">
           <div>
             <a href="#" className="font-mono font-bold text-lg text-foreground hover:text-accent transition-colors">
-              krishaansh.garden
+              krishaansh.me
             </a>
           </div>
           <div className="flex items-center gap-4">
