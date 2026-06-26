@@ -1,31 +1,13 @@
-import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
+import type { Metadata, Viewport } from "next";
 import "./globals.css";
+import Header from "@/components/Header";
+import Footer from "@/components/Footer";
+import { metadata as siteMetadata } from "@/lib/metadata";
 
-const geistSans = Geist({
-  variable: "--font-geist-sans",
-  subsets: ["latin"],
-});
+export const metadata: Metadata = siteMetadata;
 
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
-  subsets: ["latin"],
-});
-
-export const metadata: Metadata = {
-  title: "Krishaansh Saxena | Digital Garden & Now",
-  description:
-    "B.Tech CSE (AI & ML) student at KIIT University. A digital garden and 'Now' page tracking my learning, projects, reading list, and goals.",
-  keywords: [
-    "Krishaansh Saxena",
-    "Krishaansh Pushkarprabhat Saxena",
-    "Digital Garden",
-    "Now Page",
-    "KIIT University",
-    "Computer Science",
-    "AI/ML Student",
-  ],
-  authors: [{ name: "Krishaansh Pushkarprabhat Saxena" }],
+export const viewport: Viewport = {
+  themeColor: "#020617",
 };
 
 export default function RootLayout({
@@ -34,11 +16,13 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
-      <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
-      >
-        {children}
+    <html lang="en" suppressHydrationWarning>
+      <body className="bg-background text-foreground antialiased">
+        <div className="min-h-screen">
+          <Header />
+          <main className="container">{children}</main>
+          <Footer />
+        </div>
       </body>
     </html>
   );
