@@ -18,9 +18,11 @@ export default function RootLayout({
   return (
     <html lang="en" suppressHydrationWarning>
       <body className="bg-background text-foreground antialiased">
-        <div className="min-h-screen">
+        <div className="container min-h-screen">
           <Header />
-          <main className="container">{children}</main>
+
+          <main>{children}</main>
+
           <Footer />
         </div>
       </body>

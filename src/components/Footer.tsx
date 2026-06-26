@@ -1,32 +1,17 @@
-// src/components/Footer.tsx
-
-import Link from "next/link";
-import { socialLinks } from "@/lib/social";
-import { SITE_OWNER } from "@/lib/site";
+import { COPYRIGHT_YEAR, SITE_OWNER } from "@/lib/site";
 
 export default function Footer() {
   return (
-    <footer className="mt-24 border-t border-slate-800">
-      <div className="mx-auto flex max-w-5xl flex-col items-center gap-6 px-6 py-10 text-center md:px-8">
+    <footer className="mt-24 border-t border-slate-800 py-10">
+      <div className="flex flex-col items-center gap-3 text-center">
+        <h3 className="font-semibold text-slate-200">{SITE_OWNER}</h3>
+
         <p className="text-sm text-slate-400">
-          Learning in public.
+          Artificial Intelligence • Machine Learning • Statistics
         </p>
 
-        <div className="flex flex-wrap justify-center gap-5">
-          {socialLinks.map((link) => (
-            <Link
-              key={link.title}
-              href={link.href}
-              target="_blank"
-              className="text-sm text-slate-400 transition hover:text-white"
-            >
-              {link.title}
-            </Link>
-          ))}
-        </div>
-
         <p className="text-xs text-slate-500">
-          © {new Date().getFullYear()} {SITE_OWNER}
+          © {COPYRIGHT_YEAR} • Built with Next.js & Tailwind CSS
         </p>
       </div>
     </footer>

@@ -15,7 +15,7 @@ export default function Section({
 }: SectionProps) {
   return (
     <section id={id} className={`py-20 ${className}`}>
-      <div className="mx-auto max-w-5xl">{children}</div>
+      {children}
     </section>
   );
 }
